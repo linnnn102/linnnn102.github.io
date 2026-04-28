@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lin Ju | Portfolio</title>
+    <title th:text="${name} + ' | Portfolio'">Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 
 <nav class="sidebar">
     <div class="sidebar-profile">
-        <h1 class="sidebar-name">Lin Ju</h1>
-        <p class="sidebar-title">Software Developer<br>Data Engineer<br>AI Researcher</p>
+        <h1 class="sidebar-name" th:text="${name}">Lin Ju</h1>
+        <p class="sidebar-title" th:text="${title}">Software Developer<br>Data Engineer<br>AI Researcher</p>
     </div>
     <div class="sidebar-nav">
         <a class="nav-link" href="#about">About</a>
@@ -24,9 +24,9 @@
         <a class="nav-link" href="#education">Education</a>
     </div>
     <div class="sidebar-links">
-        <a href="mailto:jl1319131@gmail.com" target="_blank" rel="noopener">Email</a>
-        <a href="https://linkedin.com/in/linnnnj" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/linnnn102" target="_blank" rel="noopener">GitHub</a>
+        <a th:href="'mailto:' + ${email}" target="_blank" rel="noopener">Email</a>
+        <a th:href="${linkedin}" target="_blank" rel="noopener">LinkedIn</a>
+        <a th:href="${github}" target="_blank" rel="noopener">GitHub</a>
     </div>
 </nav>
 
