@@ -6,29 +6,31 @@
     <title>Lin Ju | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
-<nav class="sidebar">
-    <div class="sidebar-profile">
-        <h1 class="sidebar-name">Lin Ju</h1>
-        <p class="sidebar-title">AI Engineer<br>Software Developer</p>
-    </div>
-    <div class="sidebar-nav">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#research">Research</a>
-        <a class="nav-link" href="#education">Education</a>
+<header class="sidebar">
+    <div class="sidebar-top">
+        <div class="sidebar-intro">
+            <p class="sidebar-prompt"><span class="sidebar-path">~/lin-ju</span> <span class="sidebar-caret">❯</span> whoami</p>
+            <h1 class="sidebar-name">Lin Ju</h1>
+            <p class="sidebar-role"><span id="typed"></span><span class="type-caret" aria-hidden="true">_</span></p>
+        </div>
+        <nav class="sidebar-nav" aria-label="Section navigation">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-link" href="#research">Research</a>
+            <a class="nav-link" href="#education">Education</a>
+        </nav>
     </div>
     <div class="sidebar-links">
-        <a href="mailto:jl1319131@gmail.com" target="_blank" rel="noopener">Email</a>
         <a href="https://linkedin.com/in/linnnnj" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/linnnn102" target="_blank" rel="noopener">GitHub</a>
     </div>
-</nav>
+</header>
 
 <div class="page-wrap">
     <main class="container">
@@ -48,7 +50,7 @@
                 <h3><a href="https://github.com/linnnn102/RaGuard" target="_blank" rel="noopener">RaGuard ↗</a></h3>
                 <div class="tags">
                     <span class="tag">Python</span>
-                    <span class="tag">Llama 3</span>
+                    <span class="tag">Local LLM</span>
                     <span class="tag">Sentence Transformers</span>
                     <span class="tag">Docker</span>
                     <span class="tag">ffuf</span>
@@ -180,6 +182,51 @@
     }, { rootMargin: '-30% 0px -60% 0px' });
 
     sections.forEach(s => observer.observe(s));
+
+    // Typed tagline in the hero
+    (function () {
+        const el = document.getElementById('typed');
+        if (!el) return;
+        const phrases = ['AI Engineer', 'Software Developer', 'Multimodal LLM Researcher'];
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            el.textContent = phrases[0];
+            return;
+        }
+        let p = 0, i = 0, deleting = false;
+        (function tick() {
+            const word = phrases[p];
+            el.textContent = word.slice(0, i);
+            if (!deleting && i < word.length) { i++; setTimeout(tick, 70); }
+            else if (!deleting) { deleting = true; setTimeout(tick, 1600); }
+            else if (i > 0) { i--; setTimeout(tick, 35); }
+            else { deleting = false; p = (p + 1) % phrases.length; setTimeout(tick, 350); }
+        })();
+    })();
+
+    // Scroll-reveal (skipped entirely if the user prefers reduced motion)
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                const delay = +e.target.dataset.revealDelay || 0;
+                setTimeout(() => e.target.classList.add('is-visible'), delay);
+                io.unobserve(e.target);
+            });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+
+        const add = (el, delay) => {
+            el.classList.add('reveal');
+            if (delay) el.dataset.revealDelay = delay;
+            io.observe(el);
+        };
+
+        document.querySelectorAll('#about, #projects > h2, #experience > h2, #research, #education')
+            .forEach(el => add(el, 0));
+        document.querySelectorAll('.project-card').forEach((el, i) => add(el, i * 90));
+        document.querySelectorAll('.job').forEach((el, i) => add(el, i * 90));
+    })();
 </script>
 </body>
 </html>
