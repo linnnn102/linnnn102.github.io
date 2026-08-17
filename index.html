@@ -20,6 +20,7 @@
         </div>
         <nav class="sidebar-nav" aria-label="Section navigation">
             <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#skills">Skills</a>
             <a class="nav-link" href="#projects">Projects</a>
             <a class="nav-link" href="#experience">Experience</a>
             <a class="nav-link" href="#research">Research</a>
@@ -27,6 +28,7 @@
         </nav>
     </div>
     <div class="sidebar-links">
+        <a href="./Lin_Ju_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         <a href="https://linkedin.com/in/linnnnj" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/linnnn102" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -38,10 +40,79 @@
         <section id="about" class="card">
             <h2>About</h2>
             <p>
-                Graduate student in Computer Software Engineering at Northeastern University with hands-on
-                experience in backend development, data engineering, and multimodal LLM research.
-                I enjoy building reliable systems that connect data, software, and practical product impact.
+                Graduate student in Computer Software Engineering at Northeastern University, in Boston.
+                Most recently a founding AI engineer at Interlock Systems, where I built a multi-agent system
+                that turns engineering documents into ERP/MRP transactions, and before that a software developer
+                intern at NVIDIA working on GPU-accelerated data tooling and test automation. Three years of
+                data engineering came first.
             </p>
+            <p>
+                I like systems where the model is one component and the engineering around it — retrieval,
+                routing, validation, evaluation — decides whether it actually works.
+            </p>
+        </section>
+
+        <section id="skills" class="card">
+            <h2>Skills</h2>
+
+            <p><strong>Languages</strong></p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">C++</span>
+                <span class="tag">SQL (BigQuery, T-SQL, MySQL)</span>
+                <span class="tag">JavaScript / TypeScript</span>
+                <span class="tag">Bash / Shell</span>
+            </div>
+
+            <p><strong>AI &amp; LLM systems</strong></p>
+            <div class="tags">
+                <span class="tag">RAG</span>
+                <span class="tag">Retrieval &amp; Embeddings</span>
+                <span class="tag">Fine-tuning (LoRA / QLoRA, PEFT)</span>
+                <span class="tag">Multi-Agent Systems</span>
+                <span class="tag">Tool Calling</span>
+                <span class="tag">MCP</span>
+                <span class="tag">Prompt Engineering</span>
+                <span class="tag">LLM Evaluation</span>
+                <span class="tag">DSPy</span>
+                <span class="tag">Ollama</span>
+                <span class="tag">Groq</span>
+                <span class="tag">Hugging Face Transformers</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">scikit-learn</span>
+            </div>
+
+            <p><strong>Backend &amp; data</strong></p>
+            <div class="tags">
+                <span class="tag">FastAPI</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">NestJS</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">ETL Pipelines</span>
+            </div>
+
+            <p><strong>Tools &amp; cloud</strong></p>
+            <div class="tags">
+                <span class="tag">Docker</span>
+                <span class="tag">AWS (EC2, S3, Secrets Manager)</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Git</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Jenkins CI/CD</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Cloudflare Tunnel</span>
+                <span class="tag">Pytest</span>
+                <span class="tag">Behave</span>
+            </div>
         </section>
 
         <section id="projects" class="card">
@@ -50,17 +121,17 @@
                 <h3><a href="https://github.com/linnnn102/RaGuard" target="_blank" rel="noopener">RaGuard ↗</a></h3>
                 <div class="tags">
                     <span class="tag">Python</span>
-                    <span class="tag">Local LLM</span>
-                    <span class="tag">Sentence Transformers</span>
+                    <span class="tag">Ollama / Qwen3</span>
+                    <span class="tag">RAG</span>
                     <span class="tag">Docker</span>
                     <span class="tag">ffuf</span>
-                    <span class="tag">FastMCP</span>
+                    <span class="tag">SecLists</span>
                 </div>
-                <p>Automated security testing pipeline combining RAG with LLM-driven static analysis and HTTP fuzzing to detect, reproduce, and remediate vulnerabilities in Python web applications.</p>
+                <p>A vulnerability detection and mitigation copilot for Python web applications: RAG-grounded static analysis, generated fuzzing, and dynamic validation, running entirely on local models. Under review, 2026.</p>
                 <ul>
-                    <li>Three-stage assessment: static analysis → fuzzing generation → dynamic validation in Docker</li>
-                    <li>RAG-augmented analysis grounded in a CWE/CVE knowledge base for accurate classification</li>
-                    <li>Structured reports with severity levels and remediation guidance organized by CWE category</li>
+                    <li>A generalist LLM orchestrator routes specialist SLMs through a tool-calling loop — <code>analyze_code</code>, <code>select_wordlists</code>, <code>suggest_mitigations</code> — with model routing driven by a single versioned YAML</li>
+                    <li>RAG over a CWE/CVE knowledge base grounds every finding; a finding is marked confirmed only after ffuf reproduces it against a live containerized target</li>
+                    <li>Runs fully locally on Ollama, isolated in two OWASP-hardened Docker containers, with an evaluation harness scoring latency, cost, precision, recall, and F1</li>
                 </ul>
             </div>
             <div class="project-card">
@@ -103,13 +174,26 @@
             <div class="timeline">
                 <article class="job">
                     <div class="job-header">
+                        <h3>Interlock Systems — Founding AI Engineer Intern</h3>
+                        <span class="meta">Jun 2026 – Sept 2026</span>
+                    </div>
+                    <p class="job-company">Harvard startup · Boston, MA</p>
+                    <ul>
+                        <li>Built core platform features from scratch as a founding engineer on a multi-agent AI system that automates manufacturing workflows from engineering documents into ERP/MRP systems, contributing to a successful $24K Stage 1 customer deployment and onsite implementation.</li>
+                        <li>Built a SAP S/4HANA ERP integration with SAP CAP (Node.js), exposing SAP-identical OData APIs and a 12-app Fiori launchpad as the reference system for a product planning pilot with a Fortune 500 chemical manufacturer.</li>
+                        <li>Engineered ETL pipelines loading customer data into PostgreSQL and deployed the stack to AWS EC2 as a hardened systemd service.</li>
+                        <li>Architected the platform end-to-end: system architecture, automated testing and evaluation frameworks, CI/CD pipelines, and AI-powered workflows (document ingestion, OCR/parsing, intelligent data extraction) with React, FastAPI, SQL, AWS, Docker, and LLM APIs.</li>
+                    </ul>
+                </article>
+                <article class="job">
+                    <div class="job-header">
                         <h3>Nvidia — Software Developer Intern</h3>
                         <span class="meta">Jun 2025 – Dec 2025</span>
                     </div>
-                    <p class="job-company">GPU Software · Healthcare AI &amp; Robotics</p>
+                    <p class="job-company">Spark RAPIDS ML · Holoscan &amp; Isaac</p>
                     <ul>
-                        <li>Built backend data storage utilities and API migration tools for GPU-accelerated workloads with Python, Docker, and Linux.</li>
-                        <li>Developed a test automation system including a JaCoCo exec reader in Java and an MCP server using Python and OpenAPI.</li>
+                        <li>Developed automated backend data storage utilities and API migration tools for GPU-accelerated workloads with Python, Docker, and Linux; benchmarked GPU-optimized deep learning pipelines against CPU-based models.</li>
+                        <li>Built a test automation system to improve code coverage, including a Java JaCoCo execution-data reader, a Python MCP server using FastMCP/OpenAPI, and IDE integration.</li>
                         <li>Analyzed automation outcomes in Jenkins CI/CD to monitor stability and detect performance regressions.</li>
                     </ul>
                 </article>
@@ -131,8 +215,8 @@
                     </div>
                     <ul>
                         <li>Created decision-support dashboards and automation tooling with SQL Server, VBA, and Python.</li>
-                        <li>Implemented data modeling and an automated crawling pipeline; built ML models for segmentation and behavior prediction.</li>
-                        <li>Collaborated with IT teams on data warehouse and ETL design, driving a 50% YoY ROI increase.</li>
+                        <li>Implemented data modeling and an automated crawling pipeline; built ML models for cluster analysis and consumer segmentation to predict behavior, producing a 50% YoY ROI increase.</li>
+                        <li>Collaborated with IT teams on data warehouse and ETL design.</li>
                     </ul>
                 </article>
             </div>
@@ -144,6 +228,10 @@
                 <strong>Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks</strong><br>
                 <span style="color:var(--muted);font-size:0.88rem;">Accepted · ICLR 2026</span>
             </p>
+            <p>
+                Co-authored a study of how multimodal large language models perform visual reasoning on
+                referring expression tasks.
+            </p>
         </section>
 
         <section id="education" class="card">
@@ -151,7 +239,7 @@
             <ul>
                 <li>
                     <strong>Northeastern University, Boston, MA</strong><br>
-                    M.S. Computer Software Engineering, 2024 – 2026
+                    M.S. Computer Software Engineering, expected Dec 2026
                 </li>
                 <li>
                     <strong>Tongji University, Shanghai, China</strong><br>
@@ -222,7 +310,7 @@
             io.observe(el);
         };
 
-        document.querySelectorAll('#about, #projects > h2, #experience > h2, #research, #education')
+        document.querySelectorAll('#about, #skills > h2, #projects > h2, #experience > h2, #research, #education')
             .forEach(el => add(el, 0));
         document.querySelectorAll('.project-card').forEach((el, i) => add(el, i * 90));
         document.querySelectorAll('.job').forEach((el, i) => add(el, i * 90));
