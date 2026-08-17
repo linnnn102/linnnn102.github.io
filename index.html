@@ -20,10 +20,10 @@
         </div>
         <nav class="sidebar-nav" aria-label="Section navigation">
             <a class="nav-link" href="#about">About</a>
-            <a class="nav-link" href="#skills">Skills</a>
-            <a class="nav-link" href="#projects">Projects</a>
             <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-link" href="#projects">Projects</a>
             <a class="nav-link" href="#research">Research</a>
+            <a class="nav-link" href="#skills">Skills</a>
             <a class="nav-link" href="#education">Education</a>
         </nav>
     </div>
@@ -49,6 +49,125 @@
             <p>
                 I like systems where the model is one component and the engineering around it — retrieval,
                 routing, validation, evaluation — decides whether it actually works.
+            </p>
+        </section>
+
+        <section id="experience" class="card">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <article class="job">
+                    <div class="job-header">
+                        <h3>Interlock Systems — Founding AI Engineer Intern</h3>
+                        <span class="meta">Jun 2026 – Sept 2026</span>
+                    </div>
+                    <p class="job-company">Harvard startup · Boston, MA</p>
+                    <ul>
+                        <li>Built core platform features from scratch as a founding engineer on a multi-agent AI system that automates manufacturing workflows from engineering documents into ERP/MRP systems, contributing to a successful $24K Stage 1 customer deployment and onsite implementation.</li>
+                        <li>Built a SAP S/4HANA ERP integration with SAP CAP (Node.js), exposing SAP-identical OData APIs and a 12-app Fiori launchpad as the reference system for a product planning pilot with a Fortune 500 chemical manufacturer.</li>
+                        <li>Engineered ETL pipelines loading customer data into PostgreSQL and deployed the stack to AWS EC2 as a hardened systemd service.</li>
+                        <li>Architected the platform end-to-end: system architecture, automated testing and evaluation frameworks, CI/CD pipelines, and AI-powered workflows (document ingestion, OCR/parsing, intelligent data extraction) with React, FastAPI, SQL, AWS, Docker, and LLM APIs.</li>
+                    </ul>
+                </article>
+                <article class="job">
+                    <div class="job-header">
+                        <h3>Nvidia — Software Developer Intern</h3>
+                        <span class="meta">Jun 2025 – Dec 2025</span>
+                    </div>
+                    <p class="job-company">Spark RAPIDS ML · Holoscan &amp; Isaac</p>
+                    <ul>
+                        <li>Developed automated backend data storage utilities and API migration tools for GPU-accelerated workloads with Python, Docker, and Linux; benchmarked GPU-optimized deep learning pipelines against CPU-based models.</li>
+                        <li>Built a test automation system to improve code coverage, including a Java JaCoCo execution-data reader, a Python MCP server using FastMCP/OpenAPI, and IDE integration.</li>
+                        <li>Analyzed automation outcomes in Jenkins CI/CD to monitor stability and detect performance regressions.</li>
+                    </ul>
+                </article>
+                <article class="job">
+                    <div class="job-header">
+                        <h3>Payoneer Inc — Data Engineer</h3>
+                        <span class="meta">Sep 2023 – Aug 2024</span>
+                    </div>
+                    <ul>
+                        <li>Designed data integration workflows with GCP, BigQuery, Python, and VBA for a new product, improving ROI by 20%.</li>
+                        <li>Developed an e-contract platform using Salesforce and front-end technologies under compliance requirements.</li>
+                        <li>Built an all-in-one app for campaign tracking and business development actions.</li>
+                    </ul>
+                </article>
+                <article class="job">
+                    <div class="job-header">
+                        <h3>RDM Management Consulting — Data Engineer</h3>
+                        <span class="meta">Dec 2021 – Sep 2023</span>
+                    </div>
+                    <ul>
+                        <li>Created decision-support dashboards and automation tooling with SQL Server, VBA, and Python.</li>
+                        <li>Implemented data modeling and an automated crawling pipeline; built ML models for cluster analysis and consumer segmentation to predict behavior, producing a 50% YoY ROI increase.</li>
+                        <li>Collaborated with IT teams on data warehouse and ETL design.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="card">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3><a href="https://github.com/linnnn102/RaGuard" target="_blank" rel="noopener">RaGuard ↗</a></h3>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Ollama / Qwen3</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">ffuf</span>
+                    <span class="tag">SecLists</span>
+                </div>
+                <p>A vulnerability detection and mitigation copilot for Python web applications: RAG-grounded static analysis, generated fuzzing, and dynamic validation, running entirely on local models. Under review, 2026.</p>
+                <ul>
+                    <li>A generalist LLM orchestrator routes specialist SLMs through a tool-calling loop — <code>analyze_code</code>, <code>select_wordlists</code>, <code>suggest_mitigations</code> — with model routing driven by a single versioned YAML</li>
+                    <li>RAG over a CWE/CVE knowledge base grounds every finding; a finding is marked confirmed only after ffuf reproduces it against a live containerized target</li>
+                    <li>Runs fully locally on Ollama, isolated in two OWASP-hardened Docker containers, with an evaluation harness scoring latency, cost, precision, recall, and F1</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/linnnn102/IntelligentBistro" target="_blank" rel="noopener">IntelligentBistro ↗</a></h3>
+                <div class="tags">
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Expo / React Native</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">Gemini API</span>
+                    <span class="tag">Zustand</span>
+                    <span class="tag">Zod</span>
+                </div>
+                <p>AI-powered mobile ordering app where customers can browse a restaurant menu or conversationally instruct an AI assistant to manage their cart in natural language.</p>
+                <ul>
+                    <li>Dual ordering modes: traditional menu browsing and conversational AI commands backed by Gemini function calling</li>
+                    <li>Four constrained AI tools (add, update, remove, clear) with Zod-validated tool calls to prevent malformed requests</li>
+                    <li>Client-side cart state via Zustand; Node/Express backend serves the menu and proxies chat interactions</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/linnnn102/LinkOut" target="_blank" rel="noopener">LinkOut ↗</a></h3>
+                <div class="tags">
+                    <span class="tag">Java 21</span>
+                    <span class="tag">Spring Boot 3</span>
+                    <span class="tag">Hibernate</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+                <p>Transparency-focused job board that surfaces visa sponsorship status, repost flags, and agency attribution — typically absent from traditional job boards.</p>
+                <ul>
+                    <li>Candidate tools: filterable job search (sponsorship, agency, location), and application tracking.</li>
+                    <li>Recruiter tools: job posting and applicant management with status updates</li>
+                    <li>RESTful APIs for auth, jobs, applications, companies, and blocking using Hibernate DAO pattern</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="research" class="card">
+            <h2>Research</h2>
+            <p>
+                <strong>Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks</strong><br>
+                <span style="color:var(--muted);font-size:0.88rem;">Accepted · ICLR 2026</span>
+            </p>
+            <p>
+                Co-authored a study of how multimodal large language models perform visual reasoning on
+                referring expression tasks.
             </p>
         </section>
 
@@ -113,125 +232,6 @@
                 <span class="tag">Pytest</span>
                 <span class="tag">Behave</span>
             </div>
-        </section>
-
-        <section id="projects" class="card">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/RaGuard" target="_blank" rel="noopener">RaGuard ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Ollama / Qwen3</span>
-                    <span class="tag">RAG</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">ffuf</span>
-                    <span class="tag">SecLists</span>
-                </div>
-                <p>A vulnerability detection and mitigation copilot for Python web applications: RAG-grounded static analysis, generated fuzzing, and dynamic validation, running entirely on local models. Under review, 2026.</p>
-                <ul>
-                    <li>A generalist LLM orchestrator routes specialist SLMs through a tool-calling loop — <code>analyze_code</code>, <code>select_wordlists</code>, <code>suggest_mitigations</code> — with model routing driven by a single versioned YAML</li>
-                    <li>RAG over a CWE/CVE knowledge base grounds every finding; a finding is marked confirmed only after ffuf reproduces it against a live containerized target</li>
-                    <li>Runs fully locally on Ollama, isolated in two OWASP-hardened Docker containers, with an evaluation harness scoring latency, cost, precision, recall, and F1</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/IntelligentBistro" target="_blank" rel="noopener">IntelligentBistro ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">Expo / React Native</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">Gemini API</span>
-                    <span class="tag">Zustand</span>
-                    <span class="tag">Zod</span>
-                </div>
-                <p>AI-powered mobile ordering app where customers can browse a restaurant menu or conversationally instruct an AI assistant to manage their cart in natural language.</p>
-                <ul>
-                    <li>Dual ordering modes: traditional menu browsing and conversational AI commands backed by Gemini function calling</li>
-                    <li>Four constrained AI tools (add, update, remove, clear) with Zod-validated tool calls to prevent malformed requests</li>
-                    <li>Client-side cart state via Zustand; Node/Express backend serves the menu and proxies chat interactions</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/LinkOut" target="_blank" rel="noopener">LinkOut ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">Java 21</span>
-                    <span class="tag">Spring Boot 3</span>
-                    <span class="tag">Hibernate</span>
-                    <span class="tag">PostgreSQL</span>
-                </div>
-                <p>Transparency-focused job board that surfaces visa sponsorship status, repost flags, and agency attribution — typically absent from traditional job boards.</p>
-                <ul>
-                    <li>Candidate tools: filterable job search (sponsorship, agency, location), and application tracking.</li>
-                    <li>Recruiter tools: job posting and applicant management with status updates</li>
-                    <li>RESTful APIs for auth, jobs, applications, companies, and blocking using Hibernate DAO pattern</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="experience" class="card">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <article class="job">
-                    <div class="job-header">
-                        <h3>Interlock Systems — Founding AI Engineer Intern</h3>
-                        <span class="meta">Jun 2026 – Sept 2026</span>
-                    </div>
-                    <p class="job-company">Harvard startup · Boston, MA</p>
-                    <ul>
-                        <li>Built core platform features from scratch as a founding engineer on a multi-agent AI system that automates manufacturing workflows from engineering documents into ERP/MRP systems, contributing to a successful $24K Stage 1 customer deployment and onsite implementation.</li>
-                        <li>Built a SAP S/4HANA ERP integration with SAP CAP (Node.js), exposing SAP-identical OData APIs and a 12-app Fiori launchpad as the reference system for a product planning pilot with a Fortune 500 chemical manufacturer.</li>
-                        <li>Engineered ETL pipelines loading customer data into PostgreSQL and deployed the stack to AWS EC2 as a hardened systemd service.</li>
-                        <li>Architected the platform end-to-end: system architecture, automated testing and evaluation frameworks, CI/CD pipelines, and AI-powered workflows (document ingestion, OCR/parsing, intelligent data extraction) with React, FastAPI, SQL, AWS, Docker, and LLM APIs.</li>
-                    </ul>
-                </article>
-                <article class="job">
-                    <div class="job-header">
-                        <h3>Nvidia — Software Developer Intern</h3>
-                        <span class="meta">Jun 2025 – Dec 2025</span>
-                    </div>
-                    <p class="job-company">Spark RAPIDS ML · Holoscan &amp; Isaac</p>
-                    <ul>
-                        <li>Developed automated backend data storage utilities and API migration tools for GPU-accelerated workloads with Python, Docker, and Linux; benchmarked GPU-optimized deep learning pipelines against CPU-based models.</li>
-                        <li>Built a test automation system to improve code coverage, including a Java JaCoCo execution-data reader, a Python MCP server using FastMCP/OpenAPI, and IDE integration.</li>
-                        <li>Analyzed automation outcomes in Jenkins CI/CD to monitor stability and detect performance regressions.</li>
-                    </ul>
-                </article>
-                <article class="job">
-                    <div class="job-header">
-                        <h3>Payoneer Inc — Data Engineer</h3>
-                        <span class="meta">Sep 2023 – Aug 2024</span>
-                    </div>
-                    <ul>
-                        <li>Designed data integration workflows with GCP, BigQuery, Python, and VBA for a new product, improving ROI by 20%.</li>
-                        <li>Developed an e-contract platform using Salesforce and front-end technologies under compliance requirements.</li>
-                        <li>Built an all-in-one app for campaign tracking and business development actions.</li>
-                    </ul>
-                </article>
-                <article class="job">
-                    <div class="job-header">
-                        <h3>RDM Management Consulting — Data Engineer</h3>
-                        <span class="meta">Dec 2021 – Sep 2023</span>
-                    </div>
-                    <ul>
-                        <li>Created decision-support dashboards and automation tooling with SQL Server, VBA, and Python.</li>
-                        <li>Implemented data modeling and an automated crawling pipeline; built ML models for cluster analysis and consumer segmentation to predict behavior, producing a 50% YoY ROI increase.</li>
-                        <li>Collaborated with IT teams on data warehouse and ETL design.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section id="research" class="card">
-            <h2>Research</h2>
-            <p>
-                <strong>Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks</strong><br>
-                <span style="color:var(--muted);font-size:0.88rem;">Accepted · ICLR 2026</span>
-            </p>
-            <p>
-                Co-authored a study of how multimodal large language models perform visual reasoning on
-                referring expression tasks.
-            </p>
         </section>
 
         <section id="education" class="card">
