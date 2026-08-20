@@ -147,6 +147,35 @@ a:hover { text-decoration: underline; }
 
 .nav-link.active::before { color: var(--accent); }
 
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.sidebar-cta {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-align: center;
+    padding: 11px 14px;
+    border: 1px solid var(--accent-line);
+    border-radius: 8px;
+    background: var(--accent-soft);
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.sidebar-cta-icon { opacity: 0.7; }
+
+.sidebar-cta:hover {
+    background: rgba(52, 211, 153, 0.18);
+    border-color: var(--accent);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
 .sidebar-links {
     display: flex;
     flex-direction: column;
@@ -418,6 +447,10 @@ li::marker { color: var(--accent-line); }
     .nav-link:hover { border-color: var(--accent-line); }
 
     .nav-link.active { border-color: var(--accent); }
+
+    .sidebar-bottom { gap: 0; }
+
+    .sidebar-cta { margin-top: 18px; }
 
     .sidebar-links {
         flex-direction: row;
