@@ -60,7 +60,7 @@
                         <h3>Interlock Systems — Founding AI Engineer Intern</h3>
                         <span class="meta">Jun 2026 – Sept 2026</span>
                     </div>
-                    <p class="job-company">Harvard startup · Boston, MA</p>
+                    <p class="job-company">Harvard startup</p>
                     <ul>
                         <li>Built core platform features from scratch as a founding engineer on a multi-agent AI system that automates manufacturing workflows from engineering documents into ERP/MRP systems, contributing to a successful $24K Stage 1 customer deployment and onsite implementation.</li>
                         <li>Built a SAP S/4HANA ERP integration with SAP CAP (Node.js), exposing SAP-identical OData APIs and a 12-app Fiori launchpad as the reference system for a product planning pilot with a Fortune 500 chemical manufacturer.</li>
@@ -113,15 +113,17 @@
                     <span class="tag">Python</span>
                     <span class="tag">Ollama / Qwen3</span>
                     <span class="tag">RAG</span>
+                    <span class="tag">QLoRA</span>
                     <span class="tag">Docker</span>
                     <span class="tag">ffuf</span>
                     <span class="tag">SecLists</span>
                 </div>
-                <p>A vulnerability detection and mitigation copilot for Python web applications: RAG-grounded static analysis, generated fuzzing, and dynamic validation, running entirely on local models. Under review, 2026.</p>
+                <p>An agentic vulnerability detection and mitigation copilot for Python web applications: RAG-grounded static analysis, generated fuzzing, and dynamic confirmation, running entirely on local models — and a study of converting generalist LLM calls into fine-tuned small-model specialists. Under review, 2026.</p>
                 <ul>
-                    <li>A generalist LLM orchestrator routes specialist SLMs through a tool-calling loop — <code>analyze_code</code>, <code>select_wordlists</code>, <code>suggest_mitigations</code> — with model routing driven by a single versioned YAML</li>
-                    <li>RAG over a CWE/CVE knowledge base grounds every finding; a finding is marked confirmed only after ffuf reproduces it against a live containerized target</li>
-                    <li>Runs fully locally on Ollama, isolated in two OWASP-hardened Docker containers, with an evaluation harness scoring latency, cost, precision, recall, and F1</li>
+                    <li>An LLM orchestrator routes specialist small language models through a tool-calling loop — <code>analyze_code</code>, <code>select_wordlists</code>, <code>suggest_mitigations</code> — with JSON-schema structured outputs and model routing driven by a single versioned YAML</li>
+                    <li>Retrieval-augmented generation over a 994-chunk CWE/CVE knowledge base grounds every finding; a finding is marked confirmed only after ffuf reproduces it against a live containerized target</li>
+                    <li>Fine-tuned a 1.7B specialist with QLoRA on an 820-example corpus distilled from 11.8K logged teacher-LLM calls, then merged and quantized it to GGUF for local serving — it retained 80% of the 8B baseline's F1 at 2x throughput and $0 inference cost</li>
+                    <li>Runs fully locally on Ollama in two OWASP-hardened Docker containers, with an evaluation harness benchmarking three model arms on precision, recall, F1, latency, and token cost</li>
                 </ul>
             </div>
             <div class="project-card">
@@ -143,7 +145,7 @@
                 </ul>
             </div>
             <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/jd-atlas" target="_blank" rel="noopener">jd-atlas ↗</a></h3>
+                <h3><a href="https://github.com/linnnn102/jd-atlas" target="_blank" rel="noopener">JdAtlas ↗</a></h3>
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">three.js</span>
