@@ -338,6 +338,8 @@ li::marker { color: var(--accent-line); }
     margin: 0 0 8px;
 }
 
+.job-company:last-child { margin-bottom: 0; }
+
 /* ── Tags / Badges ────────────────────────────────── */
 .tags {
     display: flex;
