@@ -7,316 +7,194 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/scrolly.css">
 </head>
 <body>
 
-<header class="sidebar">
-    <div class="sidebar-top">
-        <div class="sidebar-intro">
-            <p class="sidebar-prompt"><span class="sidebar-path">~/lin-ju</span> <span class="sidebar-caret">❯</span> whoami</p>
-            <h1 class="sidebar-name">Lin Ju</h1>
-            <p class="sidebar-role"><span id="typed"></span><span class="type-caret" aria-hidden="true">_</span></p>
-        </div>
-        <nav class="sidebar-nav" aria-label="Section navigation">
-            <a class="nav-link" href="#about">About</a>
-            <a class="nav-link" href="#experience">Experience</a>
-            <a class="nav-link" href="#projects">Projects</a>
-            <a class="nav-link" href="#research">Research</a>
-            <a class="nav-link" href="#skills">Skills</a>
-            <a class="nav-link" href="#education">Education</a>
-        </nav>
-    </div>
-    <div class="sidebar-bottom">
-        <a class="sidebar-cta" href="https://calendar.app.google/1Zsmz2pRzE6P2yzr8" target="_blank" rel="noopener">
-            <span class="sidebar-cta-icon" aria-hidden="true">❯</span> Book a quick chat
-        </a>
-        <div class="sidebar-links">
-            <a href="./Lin_Ju_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a href="https://linkedin.com/in/linnnnj" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/linnnn102" target="_blank" rel="noopener">GitHub</a>
-        </div>
-    </div>
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<header class="topbar">
+    <a class="topbar-name" href="#top"><span class="accent">~/</span>lin-ju</a>
+    <nav class="topbar-nav" aria-label="Chapters">
+        <a href="#path" data-chapter="path">path</a>
+        <a href="#work" data-chapter="work">work</a>
+        <a href="#research" data-chapter="research">research</a>
+        <a href="#toolkit" data-chapter="toolkit">toolkit</a>
+        <a href="#contact" data-chapter="contact">contact</a>
+    </nav>
 </header>
 
-<div class="page-wrap">
-    <main class="container">
+<!-- ── 0. Hero ───────────────────────────────────── -->
+<section class="hero" id="top">
+    <p class="prompt"><span class="accent">~/lin-ju</span> <span class="accent">❯</span> whoami</p>
+    <h1 class="hero-name">Lin Ju</h1>
+    <p class="hero-role"><span id="typed"></span><span class="type-caret" aria-hidden="true">_</span></p>
+    <p class="hero-lede">Multi-agent AI, GPU tooling, data pipelines.<br>Here's the path.</p>
+    <div class="scroll-cue" aria-hidden="true"><span>scroll</span><i></i></div>
+</section>
 
-        <section id="about" class="card">
-            <h2>About</h2>
-            <p>
-                Graduate student in Computer Software Engineering at Northeastern University, in Boston.
-                Most recently a founding AI engineer at Interlock Systems, where I built a multi-agent system
-                that turns engineering documents into ERP/MRP transactions, and before that a software developer
-                intern at NVIDIA working on GPU-accelerated data tooling and test automation. Three years of
-                data engineering came first.
-            </p>
-            <p>
-                I like systems where the model is one component and the engineering around it — retrieval,
-                routing, validation, evaluation — decides whether it actually works.
-            </p>
-        </section>
+<!-- ── 1. The path (center-line timeline, most recent first) ── -->
+<section class="path" id="path" data-chapter="path">
+    <p class="kicker">// path</p>
+    <div class="path-heads" aria-hidden="true">
+        <span>work</span>
+        <span>school</span>
+    </div>
+    <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"><span id="timeline-fill"></span></div>
 
-        <section id="experience" class="card">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <article class="job">
-                    <div class="job-header">
-                        <h3>Interlock Systems Inc. — Founding AI Engineer Intern</h3>
-                        <span class="meta">Jun 2026 – Aug 2026</span>
-                    </div>
-                    <p class="job-company">Harvard startup</p>
-                </article>
-                <article class="job">
-                    <div class="job-header">
-                        <h3>Nvidia — Software Developer Intern</h3>
-                        <span class="meta">Jun 2025 – Dec 2025</span>
-                    </div>
-                    <p class="job-company">Spark RAPIDS ML · Holoscan &amp; Isaac</p>
-                </article>
-                <article class="job">
-                    <div class="job-header">
-                        <h3>Payoneer Inc. — Data Engineer</h3>
-                        <span class="meta">Sep 2023 – Aug 2024</span>
-                    </div>
-                </article>
-                <article class="job">
-                    <div class="job-header">
-                        <h3>RDM Management Consulting — Data Engineer</h3>
-                        <span class="meta">Dec 2021 – Sep 2023</span>
-                    </div>
-                </article>
-            </div>
-        </section>
+        <span class="year" style="grid-row: 1">2026</span>
+        <article class="entry work" style="grid-row: 1">
+            <span class="step-kicker">Jun 2026 – Aug 2026</span>
+            <h3><span class="mark">Harvard startup</span>Interlock Systems</h3>
+            <p class="entry-role">Founding AI Engineer Intern</p>
+            <p>Built a multi-agent system that turns engineering documents into ERP/MRP transactions.</p>
+        </article>
+        <article class="entry school" style="grid-row: 1 / span 2">
+            <span class="step-kicker">Sept 2024 – Dec 2026 · Boston, MA</span>
+            <h3>Northeastern University</h3>
+            <p class="entry-role">M.S. Computer Software Engineering</p>
+        </article>
 
-        <section id="projects" class="card">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/RaGuard" target="_blank" rel="noopener">RaGuard ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Ollama / Qwen3</span>
-                    <span class="tag">RAG</span>
-                    <span class="tag">QLoRA</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">ffuf</span>
-                    <span class="tag">SecLists</span>
+        <span class="year" style="grid-row: 2">2025</span>
+        <article class="entry work" style="grid-row: 2">
+            <span class="step-kicker">Jun 2025 – Dec 2025</span>
+            <h3>NVIDIA</h3>
+            <p class="entry-role">Software Developer Intern</p>
+            <p>GPU-accelerated data tooling and test automation across Spark RAPIDS ML, Holoscan and Isaac.</p>
+        </article>
+
+        <span class="year" style="grid-row: 3">2023</span>
+        <article class="entry work" style="grid-row: 3">
+            <span class="step-kicker">Sep 2023 – Aug 2024</span>
+            <h3>Payoneer Inc.</h3>
+            <p class="entry-role">Data Engineer</p>
+        </article>
+
+        <span class="year" style="grid-row: 4">2021</span>
+        <article class="entry work" style="grid-row: 4">
+            <span class="step-kicker">Dec 2021 – Sep 2023</span>
+            <h3>RDM Management Consulting</h3>
+            <p class="entry-role">Data Engineer</p>
+        </article>
+        <article class="entry school" style="grid-row: 4">
+            <span class="step-kicker">2021 · Espoo, Finland</span>
+            <h3>Aalto University</h3>
+            <p class="entry-role">Exchange, Mechanical Engineering</p>
+        </article>
+
+        <span class="year" style="grid-row: 5">2016</span>
+        <article class="entry school" style="grid-row: 5">
+            <span class="step-kicker">2016 – 2021 · Shanghai, China</span>
+            <h3>Tongji University</h3>
+            <p class="entry-role">B.E. Mechanical Engineering</p>
+            <p>Second major in German.</p>
+        </article>
+    </div>
+</section>
+
+<!-- ── 2. Work (sticky scenes) ───────────────────── -->
+<section class="scrolly scrolly--flip" id="work" data-chapter="work">
+    <p class="kicker">// work</p>
+    <div class="scrolly-graphic">
+        <div class="scenes">
+            <!-- RaGuard pipeline -->
+            <div class="scene" data-scene="raguard">
+                <p class="scene-title">RaGuard <span>pipeline</span></p>
+                <div class="pipeline">
+                    <div class="node" role="button" tabindex="0" data-node="1"><b>orchestrator</b><small>LLM · tool-calling loop</small></div>
+                    <div class="edge"></div>
+                    <div class="node" role="button" tabindex="0" data-node="2"><b>RAG</b><small>994 CWE/CVE chunks</small></div>
+                    <div class="edge"></div>
+                    <div class="node" role="button" tabindex="0" data-node="3"><b>Qwen3 1.7B</b><small>QLoRA specialist</small></div>
+                    <div class="edge"></div>
+                    <div class="node" role="button" tabindex="0" data-node="4"><b>ffuf · Docker</b><small>confirmed on live target</small></div>
                 </div>
-                <p>An agentic vulnerability detection and mitigation copilot for Python web applications: RAG-grounded static analysis, generated fuzzing, and dynamic confirmation, running entirely on local models — and a study of converting generalist LLM calls into fine-tuned small-model specialists. Under review, 2026.</p>
-                <ul>
-                    <li>An LLM orchestrator routes specialist small language models through a tool-calling loop — <code>analyze_code</code>, <code>select_wordlists</code>, <code>suggest_mitigations</code> — with JSON-schema structured outputs and model routing driven by a single versioned YAML</li>
-                    <li>Retrieval-augmented generation over a 994-chunk CWE/CVE knowledge base grounds every finding; a finding is marked confirmed only after ffuf reproduces it against a live containerized target</li>
-                    <li>Fine-tuned a 1.7B specialist with QLoRA on an 820-example corpus distilled from 11.8K logged teacher-LLM calls, then merged and quantized it to GGUF for local serving — it retained 80% of the 8B baseline's F1 at 2x throughput and $0 inference cost</li>
-                    <li>Runs fully locally on Ollama in two OWASP-hardened Docker containers, with an evaluation harness benchmarking three model arms on precision, recall, F1, latency, and token cost</li>
-                </ul>
+                <div class="stat" id="raguard-stat"><span class="stat-num">80%</span><span class="stat-label">of 8B F1 · 2× throughput · $0 inference</span></div>
             </div>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/IntelligentBistro" target="_blank" rel="noopener">IntelligentBistro ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">Expo / React Native</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">Gemini API</span>
-                    <span class="tag">Zustand</span>
-                    <span class="tag">Zod</span>
+            <!-- JdAtlas -->
+            <div class="scene" data-scene="jdatlas">
+                <p class="scene-title">JdAtlas <span>daily build</span></p>
+                <div class="dots" id="atlas-dots" aria-hidden="true"></div>
+                <div class="stat"><span class="stat-num" data-count="8000">0</span><span class="stat-label">postings · 57 ATS boards · 150-term taxonomy</span></div>
+            </div>
+            <!-- IntelligentBistro -->
+            <div class="scene" data-scene="bistro">
+                <p class="scene-title">IntelligentBistro <span>chat → cart</span></p>
+                <div class="chat">
+                    <div class="bubble user">two pad thai, one without peanuts</div>
+                    <div class="bubble tool"><code>add_item({ id: "pad-thai", qty: 1 })</code></div>
+                    <div class="bubble tool"><code>add_item({ id: "pad-thai", qty: 1, note: "no peanuts" })</code></div>
+                    <div class="bubble ok">✓ zod-validated · cart updated</div>
                 </div>
-                <p>AI-powered mobile ordering app where customers can browse a restaurant menu or conversationally instruct an AI assistant to manage their cart in natural language.</p>
-                <ul>
-                    <li>Dual ordering modes: traditional menu browsing and conversational AI commands backed by Gemini function calling</li>
-                    <li>Four constrained AI tools (add, update, remove, clear) with Zod-validated tool calls to prevent malformed requests</li>
-                    <li>Client-side cart state via Zustand; Node/Express backend serves the menu and proxies chat interactions</li>
-                </ul>
             </div>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/jd-atlas" target="_blank" rel="noopener">JdAtlas ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">three.js</span>
-                    <span class="tag">NumPy</span>
-                    <span class="tag">WebGL</span>
-                    <span class="tag">GitHub Actions</span>
-                </div>
-                <p>A 3D map of the tech stack and keyword landscape in AI/ML engineering job descriptions, rebuilt daily from 57 public ATS job boards. <a href="https://linnnn102.github.io/jd-atlas/" target="_blank" rel="noopener">Live map ↗</a></p>
-                <ul>
-                    <li>Pulls ~8,000 postings from the Greenhouse, Ashby and Lever job-board APIs, filters to AI/ML engineering roles, and matches each description against a 150-term tech taxonomy</li>
-                    <li>Positions terms in 3D by co-occurrence — classical MDS for global shape, similarity attraction to tighten clusters, box separation to guarantee no two labels overlap</li>
-                    <li>GitHub Actions refreshes and redeploys daily behind a sanity gate that fails the run rather than publishing a broken map when a board changes its API</li>
-                </ul>
-            </div>
-            <div class="project-card">
-                <h3><a href="https://github.com/linnnn102/LinkOut" target="_blank" rel="noopener">LinkOut ↗</a></h3>
-                <div class="tags">
-                    <span class="tag">Java 21</span>
-                    <span class="tag">Spring Boot 3</span>
-                    <span class="tag">Hibernate</span>
-                    <span class="tag">PostgreSQL</span>
-                </div>
-                <p>Transparency-focused job board that surfaces visa sponsorship status, repost flags, and agency attribution — typically absent from traditional job boards.</p>
-                <ul>
-                    <li>Candidate tools: filterable job search (sponsorship, agency, location), and application tracking.</li>
-                    <li>Recruiter tools: job posting and applicant management with status updates</li>
-                    <li>RESTful APIs for auth, jobs, applications, companies, and blocking using Hibernate DAO pattern</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="research" class="card">
-            <h2>Research</h2>
-            <p>
-                <strong>Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks</strong><br>
-                <span style="color:var(--muted);font-size:0.88rem;">Accepted · ICLR 2026</span>
-            </p>
-            <p>
-                Co-authored a study of how multimodal large language models perform visual reasoning on
-                referring expression tasks.
-            </p>
-        </section>
-
-        <section id="skills" class="card">
-            <h2>Skills</h2>
-
-            <p><strong>Languages</strong></p>
-            <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">Java</span>
-                <span class="tag">C++</span>
-                <span class="tag">SQL (BigQuery, T-SQL, MySQL)</span>
-                <span class="tag">JavaScript / TypeScript</span>
-                <span class="tag">Bash / Shell</span>
-            </div>
-
-            <p><strong>AI &amp; LLM systems</strong></p>
-            <div class="tags">
-                <span class="tag">RAG</span>
-                <span class="tag">Retrieval &amp; Embeddings</span>
-                <span class="tag">Fine-tuning (LoRA / QLoRA, PEFT)</span>
-                <span class="tag">Multi-Agent Systems</span>
-                <span class="tag">Tool Calling</span>
-                <span class="tag">MCP</span>
-                <span class="tag">Prompt Engineering</span>
-                <span class="tag">LLM Evaluation</span>
-                <span class="tag">DSPy</span>
-                <span class="tag">Ollama</span>
-                <span class="tag">Groq</span>
-                <span class="tag">Hugging Face Transformers</span>
-                <span class="tag">TensorFlow</span>
-                <span class="tag">scikit-learn</span>
-            </div>
-
-            <p><strong>Backend &amp; data</strong></p>
-            <div class="tags">
-                <span class="tag">FastAPI</span>
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">NestJS</span>
-                <span class="tag">Spring Boot</span>
-                <span class="tag">REST APIs</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">SQL Server</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">SQLite</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">ETL Pipelines</span>
-            </div>
-
-            <p><strong>Tools &amp; cloud</strong></p>
-            <div class="tags">
-                <span class="tag">Docker</span>
-                <span class="tag">AWS (EC2, S3, Secrets Manager)</span>
-                <span class="tag">Kubernetes</span>
-                <span class="tag">Git</span>
-                <span class="tag">GitHub Actions</span>
-                <span class="tag">Jenkins CI/CD</span>
-                <span class="tag">Linux</span>
-                <span class="tag">Cloudflare Tunnel</span>
-                <span class="tag">Pytest</span>
-                <span class="tag">Behave</span>
-            </div>
-        </section>
-
-        <section id="education" class="card">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>Northeastern University, Boston, MA</strong><br>
-                    M.S. Computer Software Engineering, expected Dec 2026
-                </li>
-                <li>
-                    <strong>Tongji University, Shanghai, China</strong><br>
-                    B.E. Mechanical Engineering (Second Major: German), 2016 – 2021
-                </li>
-                <li>
-                    <strong>Aalto University, Espoo, Finland</strong><br>
-                    Exchange Program in Mechanical Engineering, 2021
-                </li>
+        </div>
+    </div>
+    <div class="scrolly-steps">
+        <div class="step" data-scene="raguard">
+            <h3><a href="https://github.com/linnnn102/RaGuard" target="_blank" rel="noopener">RaGuard ↗</a></h3>
+            <p>An agentic vulnerability detection copilot for Python web apps, running entirely on local models.</p>
+            <ul class="points">
+                <li tabindex="0" role="button" data-node="1">An LLM orchestrator routes specialist small models through a tool-calling loop, with routing driven by one versioned YAML.</li>
+                <li tabindex="0" role="button" data-node="2">Every finding is grounded with retrieval over a 994-chunk CWE/CVE knowledge base.</li>
+                <li tabindex="0" role="button" data-node="3">A 1.7B specialist, fine-tuned with QLoRA on 820 examples distilled from 11.8K logged teacher calls, then quantized to GGUF for local serving.</li>
+                <li tabindex="0" role="button" data-node="4">A finding is only marked <em>confirmed</em> after ffuf reproduces it against a live containerized target. The specialist kept 80% of the 8B baseline's F1 at 2× throughput, at zero inference cost.</li>
             </ul>
-        </section>
+        </div>
+        <div class="step" data-scene="jdatlas">
+            <h3><a href="https://linnnn102.github.io/jd-atlas/" target="_blank" rel="noopener">JdAtlas ↗</a></h3>
+            <p>A 3D map of the AI/ML engineering job market, rebuilt every day from ~8,000 postings. Terms are positioned by co-occurrence, and a sanity gate fails the run rather than publishing a broken map.</p>
+        </div>
+        <div class="step" data-scene="bistro">
+            <h3><a href="https://github.com/linnnn102/IntelligentBistro" target="_blank" rel="noopener">IntelligentBistro ↗</a></h3>
+            <p>A mobile ordering app where you can just tell the assistant what you want. Four constrained Gemini tools with Zod-validated calls keep malformed requests out of the cart.</p>
+        </div>
+    </div>
+</section>
 
-    </main>
-</div>
+<!-- ── 3. Research ──────────────────────────────── -->
+<section class="research" id="research" data-chapter="research">
+    <p class="kicker">// research</p>
+    <article class="paper">
+        <span class="step-kicker">Accepted · ICLR 2026</span>
+        <h3><a href="https://arxiv.org/abs/2602.23898" target="_blank" rel="noopener">Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks ↗</a></h3>
+        <p>Co-authored a study of how multimodal large language models perform visual reasoning on referring expression tasks.</p>
+    </article>
+</section>
 
-<script>
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
+<!-- ── 4. Toolkit ───────────────────────────────── -->
+<section class="toolkit" id="toolkit" data-chapter="toolkit">
+    <p class="kicker">// toolkit</p>
+    <div class="tool-groups">
+        <div class="tool-group"><h4>Languages</h4><div class="tags">
+            <span>Python</span><span>Java</span><span>C++</span><span>SQL</span><span>TypeScript</span><span>Bash</span>
+        </div></div>
+        <div class="tool-group"><h4>AI &amp; LLM systems</h4><div class="tags">
+            <span>RAG</span><span>Embeddings</span><span>LoRA / QLoRA</span><span>Multi-Agent</span><span>Tool Calling</span><span>MCP</span><span>LLM Evaluation</span><span>DSPy</span><span>Ollama</span><span>Transformers</span>
+        </div></div>
+        <div class="tool-group"><h4>Backend &amp; data</h4><div class="tags">
+            <span>FastAPI</span><span>Spring Boot</span><span>Node.js</span><span>NestJS</span><span>React</span><span>PostgreSQL</span><span>MongoDB</span><span>Pandas</span><span>ETL</span>
+        </div></div>
+        <div class="tool-group"><h4>Tools &amp; cloud</h4><div class="tags">
+            <span>Docker</span><span>AWS</span><span>Kubernetes</span><span>GitHub Actions</span><span>Jenkins</span><span>Linux</span><span>Pytest</span>
+        </div></div>
+    </div>
+</section>
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(l => l.classList.remove('active'));
-                const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-                if (link) link.classList.add('active');
-            }
-        });
-    }, { rootMargin: '-30% 0px -60% 0px' });
+<!-- ── 5. Contact ───────────────────────────────── -->
+<section class="contact" id="contact" data-chapter="contact">
+    <p class="kicker">// contact</p>
+    <div class="contact-body">
+    <h2>What's the next layer?</h2>
+    <a class="cta" href="https://calendar.app.google/1Zsmz2pRzE6P2yzr8" target="_blank" rel="noopener">❯ Book a quick chat</a>
+    <div class="links">
+        <a href="./Lin_Ju_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="https://linkedin.com/in/linnnnj" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/linnnn102" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    </div>
+</section>
 
-    sections.forEach(s => observer.observe(s));
-
-    // Typed tagline in the hero
-    (function () {
-        const el = document.getElementById('typed');
-        if (!el) return;
-        const phrases = ['AI Engineer', 'Software Developer', 'Multimodal LLM Researcher'];
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            el.textContent = phrases[0];
-            return;
-        }
-        let p = 0, i = 0, deleting = false;
-        (function tick() {
-            const word = phrases[p];
-            el.textContent = word.slice(0, i);
-            if (!deleting && i < word.length) { i++; setTimeout(tick, 70); }
-            else if (!deleting) { deleting = true; setTimeout(tick, 1600); }
-            else if (i > 0) { i--; setTimeout(tick, 35); }
-            else { deleting = false; p = (p + 1) % phrases.length; setTimeout(tick, 350); }
-        })();
-    })();
-
-    // Scroll-reveal (skipped entirely if the user prefers reduced motion)
-    (function () {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (!e.isIntersecting) return;
-                const delay = +e.target.dataset.revealDelay || 0;
-                setTimeout(() => e.target.classList.add('is-visible'), delay);
-                io.unobserve(e.target);
-            });
-        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
-
-        const add = (el, delay) => {
-            el.classList.add('reveal');
-            if (delay) el.dataset.revealDelay = delay;
-            io.observe(el);
-        };
-
-        document.querySelectorAll('#about, #skills > h2, #projects > h2, #experience > h2, #research, #education')
-            .forEach(el => add(el, 0));
-        document.querySelectorAll('.project-card').forEach((el, i) => add(el, i * 90));
-        document.querySelectorAll('.job').forEach((el, i) => add(el, i * 90));
-    })();
-</script>
+<script src="./js/scrolly.js"></script>
 </body>
 </html>
